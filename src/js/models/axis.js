@@ -44,7 +44,10 @@ export default class {
                 ctx.moveTo(screenStartPosition[0] + i * delta, screenStartPosition[1] - 10);
                 ctx.lineTo(screenStartPosition[0] + i * delta, screenStartPosition[1] + 10);
                 // set the text
-                ctx.fillText(start.toString(), screenStartPosition[0] + i * delta, screenStartPosition[1] + 10); // text and position
+                if (start != 0) {
+                    ctx.fillText(start.toString(), screenStartPosition[0] + i * delta, screenStartPosition[1] + 10); // text and position
+                }
+                
                 start += 1;
             }
             ctx.closePath();

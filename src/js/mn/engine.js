@@ -54,6 +54,7 @@ class Engine {
         if (dt==0 || isNaN(dt)) return;
         
         this.mouse.update();
+        this.transform.update(dt, this.mouse);
 
         this.clear(this.ctx);
         this._scene.draw(this.ctx, this.transform);
@@ -76,7 +77,7 @@ class Engine {
     _resizeCanvas() {
         let w = document.body.offsetWidth;  // or window.innerWidth; what is the difference?
         let h = document.body.offsetHeight; // or window.innerHeight; what is the difference?
-        console.log(w, h);
+        // console.log(w, h);
     
         this._canvas.width  = w;
         this._canvas.height = h;
